@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hamburger Menu</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__container">
+        <div class="logo">
+          <h1>Logo Here</h1>
+        </div>
+        <div class="menu-btn">
+          <div class="menu-btn__burger"></div>
+        </div>
+        <div class="menu__overlay">
+          <ul class="">
+            <li><a href="" class="nav__links">Home</a></li>
+            <li><a href="" class="nav__links">About</a></li>
+            <li><a href="" class="nav__links">Contact</a></li>
+            <li><a href="" class="nav__links">View</a></li>
+            <li><a href="" class="nav__links">Shop</a></li>
+          </ul>
+        </div>
+        <nav>
+          <ul class="navbar">
+            <li><a href="" class="nav__links">Home</a></li>
+            <li><a href="" class="nav__links">About</a></li>
+            <li><a href="" class="nav__links">Contact</a></li>
+            <li><a href="" class="nav__links">View</a></li>
+            <li><a href="" class="nav__links">Shop</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <script>
+      const menuBtn = document.querySelector(".menu-btn");
+      const menuOverlay = document.querySelector(".menu__overlay");
+      menuBtn.addEventListener("click", () => {
+        menuBtn.classList.toggle("open");
+        menuOverlay.classList.toggle("open");
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,130 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.header {
+  height: 63px;
+  display: flex;
+  align-items: center;
+  &__container {
+    position: relative;
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+nav {
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+}
+.menu-btn {
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
+.navbar {
+  display: flex;
+  list-style: none;
+
+  a {
+    text-decoration: none;
+    color: black;
+    margin-left: 1rem;
+    padding-bottom: 0.5rem;
+    transition: all 1s ease-in-out;
+    &:hover {
+      color: chocolate;
+      border-bottom: 1px solid chocolate;
+    }
+  }
+}
+.menu-btn {
+  position: relative;
+  border: 1px solid black;
+  padding: 0.8rem 0.5rem;
+}
+.menu-btn__burger {
+  position: relative;
+  background-color: black;
+  height: 3px;
+  width: 1.5rem;
+  border-radius: 5px;
+  transition: all 1s ease-in-out;
+}
+.menu-btn__burger::after {
+  content: "";
+  position: absolute;
+  background-color: black;
+  height: 3px;
+  width: 1.5rem;
+  border-radius: 5px;
+  transform: translateY(7px);
+  transition: all 1s ease-in-out;
+}
+.menu-btn__burger::before {
+  content: "";
+  position: absolute;
+  background-color: black;
+  height: 3px;
+  width: 1.5rem;
+  border-radius: 5px;
+  transform: translateY(-7px);
+  transition: all 1s ease-in-out;
+}
+
+.menu-btn.open .menu-btn__burger {
+  background-color: white;
+}
+.menu-btn.open {
+  .menu-btn__burger::after {
+    transform: rotate(45deg);
+  }
+  .menu-btn__burger::before {
+    transform: rotate(-225deg);
+  }
+}
+.menu__overlay {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  transform: translateX(-110%);
+  // right: 0;
+  text-align: center;
+  background-color: rgb(228, 236, 238);
+  transition: transform 1s ease-in-out;
+
+  ul {
+    list-style: none;
+    li {
+      padding: 1rem;
+
+      a {
+        color: rgb(7, 7, 7);
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: 500;
+        font-size: 1.2rem;
+        transition: all 1s ease-in-out;
+        &:hover {
+          color: chocolate;
+          border-bottom: 1px solid chocolate;
+        }
+      }
+    }
+  }
+}
+.menu__overlay.open {
+  transform: translatex(0);
+  display: block;
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
+}
